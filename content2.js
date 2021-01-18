@@ -45,7 +45,7 @@ function addScoreButton() {
 }
 
 
-function scorePosts() {
+function scorePostWithoutJquery() {
 	cleanupPreviousMarkings();
 	var totalScore = 0;
 	var posts = document.querySelectorAll('[role=\'article\']');	
@@ -94,8 +94,10 @@ function scorePosts() {
 
 
 
-function scorePostsJquery() {
-	console.log("JD: in scorePosts");
+function scorePosts() {
+		console.log("JD: in scorePosts");
+		cleanupPreviousMarkings();
+		addScoreButton();
 	  // var posts = $('[data-testid="post_message"]');
 	  
 	  var totalScore = 0;
@@ -167,10 +169,10 @@ function cleanupPreviousMarkings() {
 	if(previousSentimentalScore) {
 		previousSentimentalScore.remove();
 	}
-	var previousinstructionsLink =   $('.sentimental-instructions-link');
+	/* var previousinstructionsLink =   $('.sentimental-instructions-link');
 	if(previousinstructionsLink) {
 		previousinstructionsLink.remove();
-	}
+	} */
 //	$('.sentimental-facebook-share').remove();
 	console.log("JD: done cleanupPreviousMarkings()"); 
 }
