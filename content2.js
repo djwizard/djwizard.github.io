@@ -46,6 +46,7 @@ function addScoreButton() {
 
 
 function scorePosts() {
+	cleanupPreviousMarkings();
 	var totalScore = 0;
 	var posts = document.querySelectorAll('[role=\'article\']');	
 	posts.forEach((post) =>  {
