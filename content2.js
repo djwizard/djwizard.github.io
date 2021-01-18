@@ -95,9 +95,11 @@ function scorePostWithoutJquery() {
 
 
 function scorePosts() {
-		console.log("JD: in scorePosts");
+		console.log("JD: in scorePosts new");
 		cleanupPreviousMarkings();
 		addScoreButton();
+		var facebookNameElement = $('div.j83agx80 h1.gmql0nx0');   var facebookNameElementHtml = facebookNameElement.html();
+		console.log("JD facebookNameElement in scorePosts = " + facebookNameElementHtml);
 	  // var posts = $('[data-testid="post_message"]');
 	  
 	  var totalScore = 0;
