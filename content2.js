@@ -131,7 +131,7 @@ function scorePostsWithJquery() {
 	  facebookNameScoreDiv = "<div id='totalSentimentalScore' class=\"sentimentalScore sentimentalTotalScore\" style='color:" + totalScoreColor  + "'>" + totalScore + "</div>";  
 	  var facebookShareLink = '<a href="https://facebook.com/sharer.php?display=page&u=' + encodeURI('https://chrome.google.com/webstore/detail/positivity-analysis-for-f/fhmimomehgblpoecngfkcpbnmnfmpmpd') + '" target="_blank" class="sentimental-share-link">share</a>';
 	  var instructionsLink = "<span class='sentimental-instructions-link'><a href='https://chrome.google.com/webstore/detail/positivity-analysis-for-f/fhmimomehgblpoecngfkcpbnmnfmpmpd' target='_blank'>(positivity score)</a></span>";
-	  facebookNameElementHtml += facebookNameScoreDiv  + instructionsLink; 
+	  facebookNameElementHtml += facebookNameScoreDiv; //  + instructionsLink; 
 	  facebookNameElement.html(facebookNameElementHtml);
 	  
 	// // FACEBOOK MARKINGS ADD
