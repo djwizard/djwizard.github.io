@@ -94,7 +94,7 @@ function scorePostWithoutJquery() {
 
 
 
-function scorePosts() {
+function scorePostsWithJquery() {
 		console.log("JD: in scorePosts new");
 		cleanupPreviousMarkings();
 		addScoreButton();
