@@ -26,7 +26,7 @@ function addScoreButton() {
 		if( !$('#addScoreButton') || JSON.stringify($('#addScoreButton'),null,4) == "{}") {
 			 var facebookNameElement = $('div.j83agx80 h1.gmql0nx0');   var facebookNameElementHtml = facebookNameElement.html();   
 			console.log("JD: putting Score Button");
-			var scoreMeButton =  "<span class='sentimental-instructions-link' id='addScoreButton'><a href='javascript:void(0)' onClick='" + addScoreButton_Escaped + "'>(get positivity score)</a></span>";;
+			var scoreMeButton =  "<span class='sentimental-instructions-link' id='addScoreButton'><a href='javascript:void(0)' onClick='" + addScoreButton_Escaped + "'>(click to get positivity score)</a></span>";;
 			facebookNameElementHtml += scoreMeButton;
 			facebookNameElement.html(facebookNameElementHtml); 
 			console.log("JD: facebookNameElementHtml="+facebookNameElementHtml);
@@ -104,12 +104,14 @@ function scorePostsWithJquery() {
 		console.log("JD facebookNameElement in scorePosts = " + facebookNameElementHtml);
 
 	  var totalScore = 0;
+	  var numberOfPosts = 0;
 
 	  posts.each(function( index ) {
 		console.log("JD: analyzing post with index: " + index);
 		var postsElement = $( this );
 		var score = analyze($( this ).text()).score;
 		totalScore += score;
+		numberOfPosts++;
 		var postsHtml = $( this ).html();
 		var postsColor = getColor(score);
 		score = getPlusMinus(score);    
@@ -125,11 +127,11 @@ function scorePostsWithJquery() {
 	  });
 
 	  // OVERALL SCORE
-
-	  var totalScoreColor = getColor(totalScore);
-	  totalScore = getPlusMinus(totalScore);
+	  var avgScore = totalScore / numberOfPosts;
+	  var totalScoreColor = getColor(avgScore);
+	  avgScore = getPlusMinus(avgScore);
 	  var existinTotalScoreDiv = $('.totalSentimentalScore');
-	  facebookNameScoreDiv = "<div id='totalSentimentalScore' class=\"sentimentalScore sentimentalTotalScore\" style='color:" + totalScoreColor  + "'>" + totalScore + "</div>";  
+	  facebookNameScoreDiv = "<div id='totalSentimentalScore' class=\"sentimentalScore sentimentalTotalScore\" style='color:" + totalScoreColor  + "'>" + avgScore + "</div>";  
 	  var facebookShareLink = '<a href="https://facebook.com/sharer.php?display=page&u=' + encodeURI('https://chrome.google.com/webstore/detail/positivity-analysis-for-f/fhmimomehgblpoecngfkcpbnmnfmpmpd') + '" target="_blank" class="sentimental-share-link">share</a>';
 	  var instructionsLink = "<span class='sentimental-instructions-link'><a href='https://chrome.google.com/webstore/detail/positivity-analysis-for-f/fhmimomehgblpoecngfkcpbnmnfmpmpd' target='_blank'>(positivity score)</a></span>";
 	  facebookNameElementHtml += facebookNameScoreDiv; //  + instructionsLink; 
