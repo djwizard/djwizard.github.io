@@ -127,7 +127,7 @@ function scorePostsWithJquery() {
 	  });
 
 	  // OVERALL SCORE
-	  var avgScore = totalScore / numberOfPosts;
+	  var avgScore = (totalScore / numberOfPosts).toFixed(1);;
 	  var totalScoreColor = getColor(avgScore);
 	  avgScore = getPlusMinus(avgScore);
 	  var existinTotalScoreDiv = $('.totalSentimentalScore');
