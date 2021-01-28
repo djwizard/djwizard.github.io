@@ -1111,9 +1111,9 @@ section {
 
 .team .member p {
   padding-top: 10px;
-  font-size: 14px;
+  font-size: 15px;
   font-style: italic;
-  color: #aaaaaa;
+  color: black;
 }
 
 .team .member .social {
