@@ -305,7 +305,7 @@
 		
 		
 		<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form class="php-email-form" onsubmit="return false;">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Имя Покупателя*</label>
@@ -333,8 +333,8 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <!--<div class="text-center"><button type="submit">Send Message</button></div>-->
-			   
+              <div class="text-center"><button type="submit">ОПЛАТИТЬ 300₴</button></div>
+			  <!-- <a href="#contact" id="payForBookButton" class="get-started-btn scrollto payForBookButton" onClick="return false;">Оплатить 300₴</a>  -->
             </form>
           </div>
 		
@@ -359,17 +359,17 @@
                 <p>+1 5589 55488 55s</p>
               </div>
 
-			 <form method="POST" accept-charset="utf-8" action="https://www.liqpay.ua/api/3/checkout" target="_blank">
-				  <input type="hidden" name="data" value="eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9" />
-				  <input type="hidden" name="signature" value="hBabK2f0ErBusJ+ZTwAC5L/Y5G8=" />
-				  <button style="border: none !important; display:inline-block !important;text-align: center !important;padding: 7px 20px !important;
-					color: #fff !important; font-size:30px !important; font-weight: 600 !important; font-family:OpenSans, sans-serif; cursor: pointer !important; border-radius: 2px !important;
-					background: rgb(92, 184, 116) !important;"onmouseover="this.style.opacity='0.5';" onmouseout="this.style.opacity='1';">
-					<img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text"
-					  style="margin-right: 7px !important; vertical-align: middle !important;"/>
-					<span style="vertical-align:middle; !important">Оплатить<br>300 UAH</span>
-				  </button>
-			</form>
+			 <!-- <form method="POST" accept-charset="utf-8" action="https://www.liqpay.ua/api/3/checkout" target="_blank"> -->
+				  <!-- <input type="hidden" name="data" value="eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9" /> -->
+				  <!-- <input type="hidden" name="signature" value="hBabK2f0ErBusJ+ZTwAC5L/Y5G8=" /> -->
+				  <!-- <button style="border: none !important; display:inline-block !important;text-align: center !important;padding: 7px 20px !important; -->
+					<!-- color: #fff !important; font-size:30px !important; font-weight: 600 !important; font-family:OpenSans, sans-serif; cursor: pointer !important; border-radius: 2px !important; -->
+					<!-- background: rgb(92, 184, 116) !important;"onmouseover="this.style.opacity='0.5';" onmouseout="this.style.opacity='1';"> -->
+					<!-- <img src="https://static.liqpay.ua/buttons/logo-small.png" name="btn_text" -->
+					  <!-- style="margin-right: 7px !important; vertical-align: middle !important;"/> -->
+					<!-- <span style="vertical-align:middle; !important">Оплатить<br>300 UAH</span> -->
+				  <!-- </button> -->
+			<!-- </form> -->
 			  
               <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>-->
 			  
