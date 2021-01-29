@@ -4,15 +4,52 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+function get_action()
+{
+	console.log("JD in getAction");
+	var name = $('#name');	
+	if(name){
+		name = $.trim(name.val());
+	};
+	var email = $('#email');	
+	if(email){
+		email = $.trim(email.val());
+	};
+	alert("JD: name="+name+" email="+email);
+	
+	var valid = name && email;
+	
+	
+	sendEmail();
+	
+	// if(valid){
+		// window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
+	// }else{
+		// console.log("JD: form is NOT VALID");
+	// }
+}
+
+
+function sendEmail() { 
+      Email.send({ 
+        Host: "smtp.gmail.com", 
+        Username: "jwizard", 
+        Password: "Dinamo66", 
+        To: 'wizard_files@yahoo.com', 
+        From: "jwizard@gmail.com", 
+        Subject: "JD: Sending Email using javascript", 
+        Body: "JD: Well that was easy!!", 
+      }) 
+        .then(function (message) { 
+          alert("mail sent successfully") 
+        }); 
+    } 
+
 !(function($) {
   "use strict";
 
-$( ".payForBookButton" ).click(function() {
-	alert("JD: we paid for it!");
-	window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
-	// var name = $.trim($('#name').val());
-	// var email = $.trim($('#email').val());
-});
+
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   var scrolltoOffset = $('#header').outerHeight() - 1;
