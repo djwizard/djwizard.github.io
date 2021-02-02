@@ -5,12 +5,66 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
+// https://medium.com/@dmccoy/how-to-submit-an-html-form-to-google-sheets-without-google-forms-b833952cc175
+
+function sendToGoogleSheets(){
+	var $form = $('form#test-form'),
+	url = 'https://script.google.com/macros/s/AKfycbyw92ejYuYiwfD9kNzHnzW5sacIxbdqesiYKNGhNVtVhE5rRns/exec'
+
+
+	var name = $('#name');	
+	if(name){
+		name = $.trim(name.val());
+	};
+	var email = $('#email');	
+	if(email){
+		email = $.trim(email.val());
+	};	
+	var address = $('#subject');	
+	if(address){
+		address = $.trim(address.val());
+	};
+	var comment = $('#comment');	
+	if(comment){
+		comment = $.trim(comment.val());
+	};
+	var date = getTodaysDate();
+	
+	var jqxhr = $.ajax({
+		url: url,
+		method: "GET",
+		dataType: "json",
+		data: {DATE:date, NAME:name, EMAIL:email, ADDRESS:address, COMMENT: comment}
+	 });
+	 jqxhr.done(function(msg) {
+		console.log("JD: request sucess");
+	});
+
+}
+function getTodaysDate() {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth();
+	var yyyy = today.getFullYear();
+	var hh = today.getHours();
+	var mm = today.getMinutes();
+	return  mm + '/' + dd + '/' + yyyy + " " + hh +":"+mm;
+}
+
 function get_action()
 {
 	console.log("JD in getAction");
 	
-	var public_key="i00000000";
-	var private_key="a4825234f4bae72a0be04eafe9e8e2bada209255";
+	var public_key="i64716415460";
+	var private_key="CcnmQj9MSIstvAQTFNQwZEzRDjfdZyo5bt7F3Nad";
+	
+	var google_sheets_clientId = "694178036885-fo84cm3fenl33nkiemf40imrq1blhg04.apps.googleusercontent.com";
+	var google_sheets_secret="NVrhRza91d6tasVzeymgvBhQ";
+	var google_sheets_api_key="AIzaSyDSz7l9DcLotKf6YqFcqXCzN3P9CZgcit0";
+	// Google Sheets Script: current web script: https://script.google.com/macros/s/AKfycbyw92ejYuYiwfD9kNzHnzW5sacIxbdqesiYKNGhNVtVhE5rRns/exec
+	
+	
 	
 	
 	var name = $('#name');	
@@ -26,18 +80,27 @@ function get_action()
 	
 	var description = "Name="+name+" Email="+email;
 	
-	var json_string = {"public_key":public_key,"version":"3","action":"pay","amount":"3","currency":"UAH","description":description,"order_id":"000001"};
-	var data = btoa(json_string);
-	alert("JD: base64="+data);
-	var signature=btoa(SHA1(private_key+data+private_key));
-	alert("JD: signature="+signature);
-
+	var json_string = {"public_key":public_key,"version":"3","action":"pay","amount":"350","currency":"UAH","description":description,"order_id":"000001"};	
+	var data = btoa(JSON.stringify(json_string));		
+	var sign_string = private_key + data + private_key;	
+	var signature=   btoa("ff8a26f9761d5bdd1b5d6434f2c2748e5d616880"); //btoa(SHA1(sign_string));
+		
+	console.log("JD: base64="+data);
+	console.log("JD: sign_string="+sign_string);
+	console.log("JD: signature="+signature);
+	// "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
 	
-	// if(valid){
-		// window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
-	// }else{
-		// console.log("JD: form is NOT VALID");
-	// }
+	
+	// data = "eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9";
+	// signature = "hBabK2f0ErBusJ+ZTwAC5L/Y5G8=";
+	
+	
+	sendToGoogleSheets();
+	if(valid){
+		window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
+	}else{
+		console.log("JD: form is NOT VALID");
+	}
 }
 
 /**
