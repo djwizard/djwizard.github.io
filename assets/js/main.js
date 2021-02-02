@@ -45,11 +45,11 @@ function sendToGoogleSheets(){
 function getTodaysDate() {
 	var today = new Date();
 	var dd = today.getDate();
-	var mm = today.getMonth();
+	var mm = today.getMonth()+1;
 	var yyyy = today.getFullYear();
 	var hh = today.getHours();
-	var mm = today.getMinutes();
-	return  mm + '/' + dd + '/' + yyyy + " " + hh +":"+mm;
+	var min = today.getMinutes();
+	return  dd + '/' + mm + '/' + yyyy + " " + hh +":"+min;
 }
 
 function get_action()
