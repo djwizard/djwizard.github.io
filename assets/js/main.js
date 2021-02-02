@@ -56,12 +56,6 @@ function get_action()
 {
 	console.log("JD in getAction");
 	
-	var public_key="i64716415460";
-	var private_key="CcnmQj9MSIstvAQTFNQwZEzRDjfdZyo5bt7F3Nad";
-	
-	var google_sheets_clientId = "694178036885-fo84cm3fenl33nkiemf40imrq1blhg04.apps.googleusercontent.com";
-	var google_sheets_secret="NVrhRza91d6tasVzeymgvBhQ";
-	var google_sheets_api_key="AIzaSyDSz7l9DcLotKf6YqFcqXCzN3P9CZgcit0";
 	// Google Sheets Script: current web script: https://script.google.com/macros/s/AKfycbyw92ejYuYiwfD9kNzHnzW5sacIxbdqesiYKNGhNVtVhE5rRns/exec
 	
 	
