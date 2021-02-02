@@ -53,7 +53,7 @@ function getTodaysDate() {
 }
 
 function get_action()
-{
+{/*
 	console.log("JD in getAction");
 	
 	// Google Sheets Script: current web script: https://script.google.com/macros/s/AKfycbyw92ejYuYiwfD9kNzHnzW5sacIxbdqesiYKNGhNVtVhE5rRns/exec
@@ -81,7 +81,7 @@ function get_action()
 		
 	console.log("JD: base64="+data);
 	console.log("JD: sign_string="+sign_string);
-	console.log("JD: signature="+signature);
+	console.log("JD: signature="+signature); */
 	// "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
 	
 	
@@ -90,11 +90,13 @@ function get_action()
 	
 	
 	sendToGoogleSheets();
-	if(valid){
+	window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
+	
+	/*if(valid){
 		window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
 	}else{
 		console.log("JD: form is NOT VALID");
-	}
+	}*/
 }
 
 /**
