@@ -96,7 +96,7 @@ function get_action()
 	
 	
 	sendToGoogleSheets();
-	/*window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8=" */
+	window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8=" 
 	
 	/*if(valid){
 		window.location.href = "https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOiIzMDAiLCJjdXJyZW5jeSI6IlVBSCIsImRlc2NyaXB0aW9uIjoi0JrQvdC40LPQsCDQmtCw0LbQtNGL0Lkg0LTQtdC90Ywg0L/RgNCw0LfQtNC90LjQuiAiLCJwdWJsaWNfa2V5IjoiaTY0NzE2NDE1NDYwIiwibGFuZ3VhZ2UiOiJydSJ9&signature=hBabK2f0ErBusJ+ZTwAC5L/Y5G8="
